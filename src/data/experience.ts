@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
     type: 'Full Time',
     bullets: [
       'Developed and maintained responsive web applications using React.js and TypeScript.',
-      'Collaborated with UI/UX designers and backend developers to deliver user-focused features.',
+      'Collaborated with UI/UX designers and backend engineers to deliver user-focused features.',
       'Improved legacy applications through bug fixes, refactoring, and performance optimization.',
       'Maintained code quality through peer code reviews and adherence to development standards.',
       'Contributed to reusable component and boilerplate development to improve team productivity.',
@@ -24,7 +24,7 @@ export const experiences: Experience[] = [
   },
   {
     period: 'Sep 2023 — Feb 2024',
-    role: 'Backend Developer',
+    role: 'Backend Engineer',
     company: 'PT Ganda Visi Jayatama',
     type: 'Part Time',
     bullets: [
