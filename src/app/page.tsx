@@ -8,6 +8,7 @@ import Description from '@/features/about/Description';
 import ExperienceSection from '@/features/experience/ExperienceSection';
 import ProjectsSection from '@/features/projects/ProjectsSection';
 import Pokedex from '@/features/pokedex/Pokedex';
+import CursorSpotlight from '@/components/CursorSpotlight';
 
 export default function Home() {
   const [activeLink, setActiveLink] = useState('about');
@@ -56,6 +57,7 @@ export default function Home() {
 
   return (
     <div className="lg:min-h-screen lg:grid lg:grid-cols-[45%_55%] bg-gradient-to-br from-indigo-950 to-slate-950 py-5 lg:p-0">
+      <CursorSpotlight />
       <Sidebar activeLink={activeLink} onNameClick={() => setOpenPokedex(true)} />
       <main className="lg:pb-20 lg:pr-20">
         <section className="lg:pt-20 lg:mx-5" id="about">

@@ -12,6 +12,13 @@ interface ProjectCardProps {
 
 const LANDSCAPE_PROJECTS = ['SandwichYay', 'Djongers Weather'];
 
+// Arrow that moves diagonally up-right on hover (Brittany Chiang style)
+function ArrowIcon() {
+  return (
+    <RxArrowTopRight className="ml-1 shrink-0 transition-transform duration-150 group-hover:-translate-y-1 group-hover:translate-x-1" />
+  );
+}
+
 export default function ProjectCard({ project, onOpenModal }: ProjectCardProps) {
   const { title, subtitle, category, description, tech, thumbnail, thumbnailAlt, href, slides } =
     project;
@@ -22,20 +29,20 @@ export default function ProjectCard({ project, onOpenModal }: ProjectCardProps) 
     <div className="card-hover mb-10 sm:grid sm:grid-cols-[30%_70%]">
       <div className="sm:order-last sm:ml-4">
         {slides ? (
-          <button className={styles.titleBtn} onClick={onOpenModal}>
+          <button className={`${styles.titleBtn} group`} onClick={onOpenModal}>
             {title}&nbsp;
             {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
-            <RxArrowTopRight />
+            <ArrowIcon />
           </button>
         ) : (
           <a
-            className={styles.titleBtn}
+            className={`${styles.titleBtn} group`}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
           >
             {title}
-            <RxArrowTopRight />
+            <ArrowIcon />
           </a>
         )}
         <p className={styles.category}>{category}</p>
