@@ -14,17 +14,18 @@ export const metadata: Metadata = {
     template: '%s | Felix Ferdinand',
   },
   description:
-    'Portfolio of Felix Ferdinand, a Frontend Engineer and Informatics Engineering graduate from Universitas Multimedia Nusantara. Skilled in Express.js, Node.js, PostgreSQL, React Native, and more.',
+    'Felix Ferdinand — Frontend Engineer specializing in React.js, TypeScript, and scalable web applications. View my projects, experience, and skills.',
   keywords: [
     'Felix Ferdinand',
     'Frontend Engineer',
-    'Portfolio',
-    'Express.js',
-    'Node.js',
-    'React Native',
+    'React.js',
     'TypeScript',
-    'PostgreSQL',
-    'Informatics Engineering',
+    'Redux',
+    'Next.js',
+    'Tailwind CSS',
+    'Portfolio',
+    'Web Developer',
+    'Indonesia',
     'UMN',
   ],
   authors: [{ name: 'Felix Ferdinand', url: baseUrl }],
@@ -37,21 +38,23 @@ export const metadata: Metadata = {
     title: 'Felix Ferdinand — Frontend Engineer',
     description:
       'Portfolio of Felix Ferdinand, a Frontend Engineer with experience in Express.js, Node.js, PostgreSQL, and React Native.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Felix Ferdinand Portfolio' }],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Felix Ferdinand — Frontend Engineer',
     description:
-      'Portfolio of Felix Ferdinand, a Frontend Engineer with experience in Express.js, Node.js, PostgreSQL, and React Native.',
-    images: ['/og-image.png'],
+      'Felix Ferdinand — Frontend Engineer specializing in React.js, TypeScript, and scalable web applications.',
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  icons: { icon: '/favicon.ico' },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
