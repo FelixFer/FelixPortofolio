@@ -9,6 +9,8 @@ import ExperienceSection from '@/features/experience/ExperienceSection';
 import ProjectsSection from '@/features/projects/ProjectsSection';
 import Pokedex from '@/features/pokedex/Pokedex';
 import CursorSpotlight from '@/components/CursorSpotlight';
+import GoToTop from '@/layout/GoToTop';
+import MobileNav from '@/layout/MobileNav';
 
 export default function Home() {
   const [activeLink, setActiveLink] = useState('about');
@@ -58,9 +60,10 @@ export default function Home() {
   return (
     <div className="lg:min-h-screen lg:grid lg:grid-cols-[45%_55%] bg-gradient-to-br from-indigo-950 to-slate-950 py-5 lg:p-0">
       <CursorSpotlight />
+      <GoToTop />
       <Sidebar activeLink={activeLink} onNameClick={() => setOpenPokedex(true)} />
-      <main className="lg:pb-20 lg:pr-20">
-        <section className="lg:pt-20 lg:mx-5" id="about">
+      <main className="pb-24 lg:pb-20 lg:pr-20">
+        <section className="lg:pt-20 lg:mx-5 scroll-mt-20" id="about">
           <nav className="section-nav">
             <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">ABOUT</h4>
           </nav>
@@ -70,6 +73,7 @@ export default function Home() {
         <ProjectsSection />
         <Footer />
       </main>
+      <MobileNav activeLink={activeLink} />
       <Pokedex open={openPokedex} onClose={() => setOpenPokedex(false)} pokemonData={pokemon} />
     </div>
   );

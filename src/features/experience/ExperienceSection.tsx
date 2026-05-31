@@ -3,7 +3,7 @@ import { experiences } from '@/data/experience';
 
 export default function ExperienceSection() {
   return (
-    <section className="lg:pt-20" id="experience">
+    <section className="lg:pt-20 scroll-mt-20" id="experience">
       <nav className="section-nav">
         <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">EXPERIENCE</h4>
       </nav>

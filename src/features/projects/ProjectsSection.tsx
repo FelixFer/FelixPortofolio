@@ -10,7 +10,7 @@ export default function ProjectsSection() {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
 
   return (
-    <section className="lg:pt-20" id="project">
+    <section className="lg:pt-20 scroll-mt-20" id="project">
       <nav className="section-nav">
         <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">PROJECT</h4>
       </nav>
