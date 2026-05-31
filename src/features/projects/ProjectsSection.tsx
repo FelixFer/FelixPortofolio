@@ -34,12 +34,14 @@ export default function ProjectsSection() {
           >
             <Carousel>
               {project.slides.map((slide, j) => (
+                // No width/height/style here — the .slide img CSS in
+                // Carousel.module.scss constrains to max 100% × 450 px,
+                // preserving aspect ratio for every image format.
                 <Image
                   key={j}
                   loading="lazy"
                   src={slide}
                   alt={`${project.title} screenshot ${j + 1}`}
-                  className="rounded"
                 />
               ))}
             </Carousel>

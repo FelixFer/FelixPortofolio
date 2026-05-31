@@ -1,8 +1,24 @@
 @use '../../styles/variables' as *;
 
-.wrapper {
-  position: relative;
+// ─── Outer shell ──────────────────────────────────────────────────────────
+.outer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// ─── Arrow + viewport row ─────────────────────────────────────────────────
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+// ─── Scrolling viewport (clips the track) ─────────────────────────────────
+.viewport {
+  flex: 1;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .track {
@@ -10,45 +26,66 @@
   transition: transform $duration-slow ease-out;
 }
 
-.controls {
-  position: absolute;
-  inset: 0;
+// ─── Individual slide wrapper ─────────────────────────────────────────────
+// Constrains whatever image is inside: never wider than the viewport,
+// never taller than 450 px — aspect ratio always preserved.
+.slide {
+  min-width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.15);
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+  }
 }
 
+// ─── Navigation buttons (outside the image) ───────────────────────────────
 .navBtn {
-  padding: 4px;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  color: #fefce8; // yellow-50
-  pointer-events: all;
-
-  &:hover { opacity: 0.8; }
-}
-
-.dots {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
-  right: 0;
+  background-color: rgba(79, 70, 229, 0.35); // indigo-600 tinted
+  color: #e0e7ff;                              // indigo-100
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  transition: background-color $duration-std;
+
+  &:hover {
+    background-color: rgba(79, 70, 229, 0.65);
+  }
+}
+
+// ─── Dot indicators (below the image) ────────────────────────────────────
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
-  background: white;
-  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
   transition: all $duration-std;
-  opacity: 0.5;
 
   &.active {
-    opacity: 1;
-    padding: 8px;
+    width: 20px;
+    background-color: #818cf8; // indigo-400
+  }
+
+  &:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }

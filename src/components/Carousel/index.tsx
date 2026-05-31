@@ -14,21 +14,40 @@ export default function Carousel({ children: slides }: CarouselProps) {
   const next = () => setCurr((c) => (c === slides.length - 1 ? 0 : c + 1));
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.track} style={{ transform: `translateX(-${curr * 100}%)` }}>
-        {slides}
-      </div>
-      <div className={styles.controls}>
-        <button onClick={prev} className={styles.navBtn}>
-          <AiOutlineLeft size={40} />
+    <div className={styles.outer}>
+      {/* Arrow buttons are siblings of the viewport, NOT overlaid on the image */}
+      <div className={styles.row}>
+        <button onClick={prev} className={styles.navBtn} aria-label="Previous image">
+          <AiOutlineLeft size={16} />
         </button>
-        <button onClick={next} className={styles.navBtn}>
-          <AiOutlineRight size={40} />
+
+        <div className={styles.viewport}>
+          <div
+            className={styles.track}
+            style={{ transform: `translateX(-${curr * 100}%)` }}
+          >
+            {slides.map((slide, i) => (
+              <div key={i} className={styles.slide}>
+                {slide}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button onClick={next} className={styles.navBtn} aria-label="Next image">
+          <AiOutlineRight size={16} />
         </button>
       </div>
+
+      {/* Dot indicators below the image — clickable */}
       <div className={styles.dots}>
         {slides.map((_, i) => (
-          <div key={i} className={`${styles.dot} ${curr === i ? styles.active : ''}`} />
+          <button
+            key={i}
+            className={`${styles.dot} ${curr === i ? styles.active : ''}`}
+            onClick={() => setCurr(i)}
+            aria-label={`Go to image ${i + 1}`}
+          />
         ))}
       </div>
     </div>
