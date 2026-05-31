@@ -5,7 +5,7 @@ export default function Footer() {
       <span className="text-slate-400">Felix Ferdinand</span>. Built with{' '}
       <span className="text-slate-400">Next.js</span> and{' '}
       <span className="text-slate-400">Tailwind CSS</span>, deployed with{' '}
-      <span className="text-slate-400">Vercel</span>. Last modified on December 11, 2023.
+      <span className="text-slate-400">Vercel</span>. Last modified on May 31, 2026.
     </p>
   );
 }

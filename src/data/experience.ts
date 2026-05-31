@@ -9,16 +9,30 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    period: 'Sep 2023 — Present',
+    period: 'Mar 2024 — Present',
+    role: 'Frontend Engineer',
+    company: 'PT Ganda Visi Jayatama',
+    type: 'Full Time',
+    bullets: [
+      'Developed and maintained responsive web applications using React.js and TypeScript.',
+      'Collaborated with UI/UX designers and backend developers to deliver user-focused features.',
+      'Improved legacy applications through bug fixes, refactoring, and performance optimization.',
+      'Maintained code quality through peer code reviews and adherence to development standards.',
+      'Contributed to reusable component and boilerplate development to improve team productivity.',
+    ],
+    tech: ['React.js', 'TypeScript', 'JavaScript', 'Redux', 'Tailwind CSS', 'SCSS', 'Git', 'REST API'],
+  },
+  {
+    period: 'Sep 2023 — Feb 2024',
     role: 'Backend Developer',
     company: 'PT Ganda Visi Jayatama',
     type: 'Part Time',
     bullets: [
-      'Create Restful API using Express.js and Sequelize.',
-      'Testing API using Postman.',
-      'Design database schema using dbdiagram.',
-      'Migration and seeding database using Sequelize and PostgreSQL.',
-      'Collaborating on version control code using git.',
+      'Built RESTful APIs with Express.js and Sequelize for multiple web applications.',
+      'Designed PostgreSQL database schemas and managed migrations and seed data.',
+      'Integrated backend services with frontend applications to deliver end-to-end features.',
+      'Ensured API reliability through testing, debugging, and performance optimization.',
+      'Collaborated with the development team using Git workflows and code reviews.',
     ],
     tech: ['Express.js', 'Sequelize', 'Typescript', 'Javascript', 'PostgreSQL', 'Node.js', 'Git'],
   },
