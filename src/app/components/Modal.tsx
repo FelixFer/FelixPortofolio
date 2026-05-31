@@ -12,11 +12,11 @@ export default function Modal({ open, onClose, children, width = 'w-80' }: Modal
   return (
     <div
       onClick={onClose}
-      className={`z-50 fixed inset-0 flex justify-center transition-colors ${open ? 'visible bg-gradient-to-br from-indigo-950 to-slate-950' : 'invisible'}`}
+      className={`modal-overlay ${open ? 'visible bg-gradient-to-br from-indigo-950 to-slate-950' : 'invisible'}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`rounded-xl shadow my-auto ${width} p-8 transition-all ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}
+        className={`modal-panel ${width} ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}
       >
         <button
           onClick={onClose}

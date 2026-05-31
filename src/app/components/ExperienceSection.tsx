@@ -4,7 +4,7 @@ import { experiences } from '../data/experience';
 export default function ExperienceSection() {
   return (
     <section className="lg:pt-20" id="experience">
-      <nav className="sticky top-0 drop-shadow backdrop-blur-3xl px-5 z-50 lg:hidden">
+      <nav className="section-nav">
         <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">EXPERIENCE</h4>
       </nav>
       <div className="mb-20 px-5 lg:mb-0 sm:mx-10 lg:ml-0">

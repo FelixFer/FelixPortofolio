@@ -13,7 +13,7 @@ export default function ProjectsSection() {
 
   return (
     <section className="lg:pt-20" id="project">
-      <nav className="sticky top-0 drop-shadow backdrop-blur-3xl px-5 z-10 lg:hidden">
+      <nav className="section-nav">
         <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">PROJECT</h4>
       </nav>
       <div className="mb-20 px-5 sm:mx-10 lg:ml-0">

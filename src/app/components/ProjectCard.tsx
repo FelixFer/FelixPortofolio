@@ -14,12 +14,10 @@ export default function ProjectCard({ project, onOpenModal }: ProjectCardProps) 
 
   const hasModal = !!slides;
   const isLandscape = ['SandwichYay', 'Djongers Weather'].includes(title);
-  const thumbnailClass = isLandscape
-    ? 'bg-emerald-900 relative overflow-hidden rounded-lg w-80 sm:w-40 sm:h-20 lg:w-28 lg:h-14 xl:w-44 xl:h-20 mt-4 border-2 border-slate-600 hover:border-slate-500'
-    : 'bg-emerald-900 relative overflow-hidden rounded-lg w-80 sm:w-40 sm:h-28 lg:w-28 lg:h-16 xl:w-44 xl:h-28 mt-4 border-2 border-slate-600 hover:border-slate-500';
+  const thumbnailClass = isLandscape ? 'project-thumb-landscape' : 'project-thumb';
 
   return (
-    <div className="transition-all mb-10 sm:grid sm:grid-cols-[30%_70%] lg:p-5 lg:border lg:border-transparent lg:hover:bg-indigo-950 lg:hover:rounded-md">
+    <div className="card-hover mb-10 sm:grid sm:grid-cols-[30%_70%]">
       <div className="sm:order-last sm:ml-4">
         {hasModal ? (
           <button
