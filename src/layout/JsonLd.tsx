@@ -3,21 +3,39 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Felix Ferdinand',
-    jobTitle: 'Backend Developer',
+    jobTitle: 'Frontend Engineer',
     description:
-      'Backend Developer and Informatics Engineering graduate from Universitas Multimedia Nusantara.',
+      'Frontend Engineer specializing in React.js, TypeScript, and modern web development. Experienced in building scalable web applications, REST API integration, and full-stack software development.',
     url: 'https://felixferdinand.vercel.app',
     sameAs: [
       'https://www.linkedin.com/in/felix-frdnnd/',
       'https://github.com/FelixFer',
       'https://www.instagram.com/felferdinand/',
     ],
-    knowsAbout: ['Express.js', 'Node.js', 'PostgreSQL', 'TypeScript', 'React Native', 'Sequelize'],
+    knowsAbout: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Redux',
+      'Tailwind CSS',
+      'SCSS',
+      'Responsive Web Design',
+      'Frontend Development',
+      'Web Performance Optimization',
+      'REST API Integration',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Sequelize',
+      'Git',
+      'Software Engineering',
+    ],
   };
 
   return (
     <script
-      type="application/ld+json"
+      type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );

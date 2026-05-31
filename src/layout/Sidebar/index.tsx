@@ -23,7 +23,7 @@ export default function Sidebar({ activeLink, onNameClick }: SidebarProps) {
         Felix Ferdinand
       </h1>
       <h2 className="text-center lg:text-left text-slate-300 sm:text-xl lg:text-xl xl:text-2xl">
-        Backend Developer
+        Frontend Engineer
       </h2>
       <h3 className="text-center lg:text-left text-slate-400 sm:text-sm lg:text-md xl:text-lg">
         Graduate of Informatics Engineering from Universitas Multimedia Nusantara
