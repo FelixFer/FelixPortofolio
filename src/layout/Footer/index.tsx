@@ -10,7 +10,7 @@ export default function Footer() {
       <span>·</span>
       <span>Built with Next.js &amp; Tailwind CSS</span>
       <span>·</span>
-      <span>© 2024</span>
+      <span>© 2026</span>
     </footer>
   );
 }
