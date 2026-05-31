@@ -59,18 +59,28 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data: IPokemon[] = [];
-        for (let i = 1; i < 152; i++) {
-          const response = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${i}/`
-          );
-          const { id, abilities, name, types, sprites, stats } = response.data;
-          const pokemonInfo: IPokemon = { id, abilities, name, types, sprites, stats };
-          data.push(pokemonInfo);
-        }
+        const responses = await Promise.all(
+          Array.from({ length: 151 }, (_, index) =>
+            axios.get(`https://pokeapi.co/api/v2/pokemon/${index + 1}/`)
+          )
+        );
+
+        const data: IPokemon[] = responses.map(({ data }) => {
+          const { id, abilities, name, types, sprites, stats } = data;
+
+          return {
+            id,
+            abilities,
+            name,
+            types,
+            sprites,
+            stats,
+          };
+        });
+
         setPokemon(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
     fetchData();
