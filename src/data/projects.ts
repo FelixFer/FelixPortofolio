@@ -60,7 +60,6 @@ export const projects: Project[] = [
     thumbnail: ocr,
     thumbnailAlt: 'Central OCR App',
     slides: [ocr1, ocr2, ocr3, ocr4, ocr5, ocr6, ocr7, ocr8],
-    modalWidth: 'w-5/6',
   },
   {
     title: 'SeiYou',
