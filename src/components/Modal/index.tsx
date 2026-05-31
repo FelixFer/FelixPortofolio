@@ -1,5 +1,5 @@
-import React from 'react';
 import { FaTimes } from 'react-icons/fa';
+import styles from './Modal.module.scss';
 
 interface ModalProps {
   open: boolean;
@@ -12,16 +12,13 @@ export default function Modal({ open, onClose, children, width = 'w-80' }: Modal
   return (
     <div
       onClick={onClose}
-      className={`modal-overlay ${open ? 'visible bg-gradient-to-br from-indigo-950 to-slate-950' : 'invisible'}`}
+      className={`${styles.overlay} ${open ? styles.visible : styles.hidden}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`modal-panel ${width} ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}
+        className={`${styles.panel} ${width} ${open ? styles.visible : styles.hidden}`}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 p-1 rounded-lg text-gray-300 hover:bg-gray-50 hover:text-gray-600"
-        >
+        <button onClick={onClose} className={styles.closeBtn}>
           <FaTimes />
         </button>
         {children}

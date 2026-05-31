@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.period {
+  color: #64748b; // slate-500
+  font-size: 0.875rem;
+}
+
+.role {
+  color: #cbd5e1; // slate-300
+  margin-top: 0.5rem;
+  transition: color $duration-std;
+
+  @media (min-width: 640px) { margin-top: 0; }
+}
+
+.type {
+  color: #94a3b8; // slate-400
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.bullet {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 0.75rem;
+}

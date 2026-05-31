@@ -1,4 +1,4 @@
-import { social } from '../utils/social';
+import { social } from '@/utils/social';
 
 export default function SocialIcons() {
   return (

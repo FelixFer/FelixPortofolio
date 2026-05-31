@@ -1,5 +1,6 @@
-import TechBadge from './TechBadge';
-import { Experience } from '../data/experience';
+import TechBadge from '@/components/TechBadge';
+import { Experience } from '@/data/experience';
+import styles from './experience.module.scss';
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -9,19 +10,19 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
   const { period, role, company, type, bullets, tech } = experience;
   return (
     <div className="card-hover mb-10 sm:grid sm:grid-cols-[30%_70%]">
-      <p className="text-slate-500 text-sm">{period}</p>
+      <p className={styles.period}>{period}</p>
       <div className="sm:ml-4">
-        <p className="text-slate-300 mt-2 sm:mt-0 hover:text-teal-400 lg:hover:text-slate-300">
+        <p className={styles.role}>
           {role} · {company}
         </p>
-        <p className="text-slate-400 text-sm mb-2">{type}</p>
+        <p className={styles.type}>{type}</p>
         {bullets.map((bullet, i) => (
-          <p key={i} className="text-slate-500 text-sm">
+          <p key={i} className={styles.bullet}>
             {bullets.length > 1 ? `• ${bullet}` : bullet}
           </p>
         ))}
         {tech.length > 0 && (
-          <ul className="flex gap-1 flex-wrap mt-3">
+          <ul className={styles.techList}>
             {tech.map((t) => (
               <TechBadge key={t} label={t} />
             ))}

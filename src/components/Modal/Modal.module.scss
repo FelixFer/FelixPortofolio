@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  transition: background-color $duration-std, visibility $duration-std;
+
+  &.visible {
+    visibility: visible;
+    background: linear-gradient(to bottom right, #1e1b4b, #020617); // indigo-950 → slate-950
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
+.panel {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  padding: 2rem;
+  transition: transform $duration-std $ease-out, opacity $duration-std;
+  position: relative;
+
+  &.visible {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &.hidden {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px;
+  border-radius: 6px;
+  color: #d1d5db; // gray-300
+
+  &:hover {
+    background: #f9fafb; // gray-50
+    color: #4b5563;     // gray-600
+  }
+}

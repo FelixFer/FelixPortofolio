@@ -1,0 +1,11 @@
+// ─── Color tokens ──────────────────────────────────────────────────────────
+$color-teal:             #5eead4;
+$color-teal-dark:        #1c615b;
+$color-scrollbar-track:  #4c4478;
+$color-scrollbar-thumb:  $color-teal;
+
+// ─── Timing ────────────────────────────────────────────────────────────────
+$duration-fast:   150ms;
+$duration-std:    300ms;
+$duration-slow:   500ms;
+$ease-out:        cubic-bezier(0.16, 1, 0.3, 1);

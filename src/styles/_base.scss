@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+// ─── Scrollbar ─────────────────────────────────────────────────────────────
+*::-webkit-scrollbar       { width: 12px; }
+*::-webkit-scrollbar-track { background: $color-scrollbar-track; }
+*::-webkit-scrollbar-thumb {
+  background-color: $color-scrollbar-thumb;
+  border-radius: 14px;
+  border: 3px solid $color-scrollbar-track;
+}
+
+// ─── Text selection ────────────────────────────────────────────────────────
+::selection {
+  background: $color-teal;
+  color: $color-teal-dark;
+}

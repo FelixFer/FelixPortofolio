@@ -1,7 +1,8 @@
-import { FaTimes } from 'react-icons/fa';
-import { IPokemon } from '../interface/IPokemon';
 import Image from 'next/image';
-import { primary, secondary, tertiary } from '../utils/typeColors';
+import { FaTimes } from 'react-icons/fa';
+import { IPokemon } from '@/types/pokemon';
+import { primary, secondary, tertiary } from '@/utils/typeColors';
+import styles from './pokedex.module.scss';
 
 interface PokedexProps {
   open: boolean;
@@ -14,51 +15,50 @@ function capitalize(str: string) {
 }
 
 export default function Pokedex({ open, onClose, pokemonData }: PokedexProps) {
+  const stateClass = open ? styles.open : styles.closed;
+
   return (
-    <div
-      onClick={onClose}
-      className={`z-50 fixed inset-0 flex justify-center transition-colors ${open ? 'visible bg-gradient-to-br from-indigo-950 to-slate-950' : 'invisible'}`}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className={`overflow-auto bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-violet-500 via-indigo-200 to-purple-100 h-96 rounded-xl shadow my-auto p-8 transition-all ${open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}
-      >
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 p-1 rounded-lg text-gray-300 hover:bg-gray-50 hover:text-gray-600"
-        >
+    <div onClick={onClose} className={`${styles.overlay} ${stateClass}`}>
+      <div onClick={(e) => e.stopPropagation()} className={`${styles.panel} ${stateClass}`}>
+        <button onClick={onClose} className={styles.closeBtn}>
           <FaTimes />
         </button>
+
         {pokemonData ? (
           pokemonData.map((pokemon) => {
             const typeName = pokemon.types[0].type.name;
-            const artwork = pokemon.sprites.other?.['official-artwork']?.front_default ?? pokemon.sprites.front_default ?? '';
+            const artwork =
+              pokemon.sprites.other?.['official-artwork']?.front_default ??
+              pokemon.sprites.front_default ??
+              '';
             return (
               <div
                 key={pokemon.id}
-                className="my-5 rounded-xl items-center flex p-2 shadow-lg active:translate-y-2 cursor-pointer active:[box-shadow:0_0px_0_0_#64599e,0_0px_0_0_#7482ce] active:border-b-[0px] transition-all duration-150 [box-shadow:0_6px_0_0_#64599e,0_12px_0_0_#7482ce] border-b-[1px] select-none"
+                className={styles.pokemonCard}
                 style={{ backgroundColor: secondary[typeName as keyof typeof secondary] }}
               >
                 <Image
                   src={artwork}
                   alt={pokemon.name}
-                  className="rounded-full mr-3"
+                  className={styles.avatar}
                   style={{ backgroundColor: tertiary[typeName as keyof typeof tertiary] }}
                   loading="lazy"
                   width={100}
                   height={100}
                 />
                 <div>
-                  <h2 className="text-slate-50">{`#${pokemon.id} ${capitalize(pokemon.name)}`}</h2>
-                  <div className="flex text-slate-50 gap-1 text-xs">
+                  <p className={styles.pokemonName}>
+                    {`#${pokemon.id} ${capitalize(pokemon.name)}`}
+                  </p>
+                  <div className={styles.typeList}>
                     {pokemon.types.map(({ type }) => (
-                      <p
+                      <span
                         key={type.name}
-                        className="rounded-md px-3 py-1 border-2"
+                        className={styles.typeBadge}
                         style={{ backgroundColor: primary[type.name as keyof typeof primary] }}
                       >
                         {type.name}
-                      </p>
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -66,7 +66,7 @@ export default function Pokedex({ open, onClose, pokemonData }: PokedexProps) {
             );
           })
         ) : (
-          <div role="status" className="flex items-center h-full">
+          <div className={styles.loader} role="status">
             <svg
               aria-hidden="true"
               className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"

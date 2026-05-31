@@ -1,0 +1,98 @@
+@use '../../styles/variables' as *;
+
+// ─── Overlay ───────────────────────────────────────────────────────────────
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  transition: background-color $duration-std, visibility $duration-std;
+
+  &.open {
+    visibility: visible;
+    background: linear-gradient(to bottom right, #1e1b4b, #020617);
+  }
+
+  &.closed {
+    visibility: hidden;
+  }
+}
+
+.panel {
+  overflow-y: auto;
+  background: conic-gradient(at top left, #8b5cf6, #e0e7ff, #f3e8ff);
+  height: 24rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  padding: 2rem;
+  position: relative;
+  transition: transform $duration-std $ease-out, opacity $duration-std;
+
+  &.open   { transform: scale(1);    opacity: 1; }
+  &.closed { transform: scale(1.25); opacity: 0; }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px;
+  border-radius: 6px;
+  color: #d1d5db;
+
+  &:hover { background: #f9fafb; color: #4b5563; }
+}
+
+// ─── Pokémon card ──────────────────────────────────────────────────────────
+.pokemonCard {
+  margin: 1.25rem 0;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+
+  // Press-down effect
+  box-shadow: 0 6px 0 0 #64599e, 0 12px 0 0 #7482ce;
+  transition: all $duration-fast;
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none;
+    border-bottom-width: 0;
+  }
+}
+
+.pokemonName {
+  color: #f8fafc; // slate-50
+  font-size: 1rem;
+}
+
+.typeList {
+  display: flex;
+  gap: 4px;
+}
+
+.typeBadge {
+  border-radius: 6px;
+  padding: 4px 12px;
+  border: 2px solid transparent;
+  font-size: 0.75rem;
+  color: #f8fafc;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+// ─── Loading spinner ───────────────────────────────────────────────────────
+.loader {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

@@ -1,69 +1,24 @@
+// @use must come first before any CSS
+@use 'variables' as *;
+@use 'base';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-// ─── Design tokens ───────────────────────────────────────────────────────────
-$color-teal:        #5eead4;
-$color-teal-dark:   #1c615b;
-$color-scrollbar-track: #4C4478;
-$color-scrollbar-thumb: $color-teal;
-
-// ─── Scrollbar ────────────────────────────────────────────────────────────────
-*::-webkit-scrollbar       { width: 12px; }
-*::-webkit-scrollbar-track { background: $color-scrollbar-track; }
-*::-webkit-scrollbar-thumb {
-  background-color: $color-scrollbar-thumb;
-  border-radius: 14px;
-  border: 3px solid $color-scrollbar-track;
-}
-
-// ─── Selection ────────────────────────────────────────────────────────────────
-::selection {
-  background: $color-teal;
-  color: $color-teal-dark;
-}
-
-// ─── Base ─────────────────────────────────────────────────────────────────────
+// ─── Global layer overrides ────────────────────────────────────────────────
 @layer base {
   html { @apply scroll-smooth; }
 }
 
-// ─── Reusable component classes (Tailwind @apply) ────────────────────────────
 @layer components {
-  // Card hover effect used on experience and project rows
+  // Shared card hover — used by ExperienceCard and ProjectCard
   .card-hover {
     @apply transition-all lg:p-5 lg:border lg:border-transparent lg:hover:bg-indigo-950 lg:hover:rounded-md;
   }
 
-  // Tech badge pill
-  .tech-badge {
-    @apply rounded-xl bg-cyan-950 px-2 py-1 text-teal-400 font-bold text-[10px];
-  }
-
-  // Section mobile sticky nav
+  // Mobile section sticky header
   .section-nav {
     @apply sticky top-0 drop-shadow backdrop-blur-3xl px-5 z-50 lg:hidden;
-  }
-
-  // Modal overlay
-  .modal-overlay {
-    @apply z-50 fixed inset-0 flex justify-center transition-colors;
-  }
-
-  // Modal content panel
-  .modal-panel {
-    @apply rounded-xl shadow my-auto p-8 transition-all;
-  }
-
-  // Thumbnail image container (portrait)
-  .project-thumb {
-    @apply bg-emerald-900 relative overflow-hidden rounded-lg mt-4 border-2 border-slate-600 hover:border-slate-500;
-    @apply w-80 sm:w-40 sm:h-28 lg:w-28 lg:h-16 xl:w-44 xl:h-28;
-  }
-
-  // Thumbnail image container (landscape)
-  .project-thumb-landscape {
-    @apply bg-emerald-900 relative overflow-hidden rounded-lg mt-4 border-2 border-slate-600 hover:border-slate-500;
-    @apply w-80 sm:w-40 sm:h-20 lg:w-28 lg:h-14 xl:w-44 xl:h-20;
   }
 }

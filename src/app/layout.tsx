@@ -1,7 +1,7 @@
-import '../styles/globals.scss';
+import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import JsonLd from './components/JsonLd';
+import JsonLd from '@/layout/JsonLd';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -51,9 +51,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

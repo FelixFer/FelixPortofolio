@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+.description {
+  color: #64748b; // slate-500
+  text-align: justify;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 5rem;
+  padding: 0 1.25rem;
+
+  // Tailwind handles responsive tweaks via className on the element
+  @media (min-width: 640px) {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}

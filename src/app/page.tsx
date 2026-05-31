@@ -1,13 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { IPokemon } from './interface/IPokemon';
-import Sidebar from './components/Sidebar';
-import Description from './components/Description';
-import ExperienceSection from './components/ExperienceSection';
-import ProjectsSection from './components/ProjectsSection';
-import Footer from './components/Footer';
-import Pokedex from './components/Pokedex';
+import { IPokemon } from '@/types/pokemon';
+import Sidebar from '@/layout/Sidebar';
+import Footer from '@/layout/Footer';
+import Description from '@/features/about/Description';
+import ExperienceSection from '@/features/experience/ExperienceSection';
+import ProjectsSection from '@/features/projects/ProjectsSection';
+import Pokedex from '@/features/pokedex/Pokedex';
 
 export default function Home() {
   const [activeLink, setActiveLink] = useState('about');
@@ -59,7 +59,7 @@ export default function Home() {
       <Sidebar activeLink={activeLink} onNameClick={() => setOpenPokedex(true)} />
       <main className="lg:pb-20 lg:pr-20">
         <section className="lg:pt-20 lg:mx-5" id="about">
-          <nav className="sticky top-0 drop-shadow backdrop-blur-3xl px-5 z-50 lg:hidden">
+          <nav className="section-nav">
             <h4 className="text-center text-slate-300 font-bold mb-8 py-2 sm:mx-10">ABOUT</h4>
           </nav>
           <Description />

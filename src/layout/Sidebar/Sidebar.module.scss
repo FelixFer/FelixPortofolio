@@ -1,0 +1,38 @@
+@use '../../styles/variables' as *;
+
+.name {
+  // Underline expand animation on hover (desktop only)
+  @media (min-width: 1024px) {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 13rem;
+      background: #e2e8f0; // slate-200
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $duration-std;
+    }
+
+    &:hover::after { transform: scaleX(1); }
+  }
+}
+
+.navLink {
+  display: block;
+  padding: 0.25rem 0;
+  color: #64748b; // slate-500
+  font-weight: 700;
+  letter-spacing: normal;
+  transition: color $duration-std, letter-spacing $duration-std;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    color: #e2e8f0; // slate-200
+    letter-spacing: 0.1em;
+  }
+}

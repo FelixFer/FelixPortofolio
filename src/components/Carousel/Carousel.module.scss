@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform $duration-slow ease-out;
+}
+
+.controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.navBtn {
+  padding: 4px;
+  border-radius: 50%;
+  color: #fefce8; // yellow-50
+  pointer-events: all;
+
+  &:hover { opacity: 0.8; }
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  transition: all $duration-std;
+  opacity: 0.5;
+
+  &.active {
+    opacity: 1;
+    padding: 8px;
+  }
+}

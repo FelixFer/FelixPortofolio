@@ -1,5 +1,5 @@
 import ExperienceCard from './ExperienceCard';
-import { experiences } from '../data/experience';
+import { experiences } from '@/data/experience';
 
 export default function ExperienceSection() {
   return (

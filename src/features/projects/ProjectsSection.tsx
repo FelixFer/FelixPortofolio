@@ -2,14 +2,12 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import ProjectCard from './ProjectCard';
-import Modal from './Modal';
-import Carousel from './Carousel';
-import { projects } from '../data/projects';
+import Modal from '@/components/Modal';
+import Carousel from '@/components/Carousel';
+import { projects } from '@/data/projects';
 
 export default function ProjectsSection() {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
-
-  const modalProjects = projects.filter((p) => p.slides);
 
   return (
     <section className="lg:pt-20" id="project">
@@ -36,7 +34,13 @@ export default function ProjectsSection() {
           >
             <Carousel>
               {project.slides.map((slide, j) => (
-                <Image key={j} loading="lazy" src={slide} alt={`${project.title} screenshot ${j + 1}`} className="rounded" />
+                <Image
+                  key={j}
+                  loading="lazy"
+                  src={slide}
+                  alt={`${project.title} screenshot ${j + 1}`}
+                  className="rounded"
+                />
               ))}
             </Carousel>
           </Modal>

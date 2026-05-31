@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+
+// ─── Thumbnail base ────────────────────────────────────────────────────────
+%thumb-base {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: #064e3b; // emerald-900
+  margin-top: 1rem;
+  border: 2px solid #475569; // slate-600
+  transition: border-color $duration-std;
+
+  &:hover { border-color: #64748b; } // slate-500
+}
+
+// Portrait (mobile/app screenshots)
+.thumb {
+  @extend %thumb-base;
+  width: 20rem;
+
+  @media (min-width: 640px)  { width: 10rem; height: 7rem; }
+  @media (min-width: 1024px) { width: 7rem;  height: 4rem; }
+  @media (min-width: 1280px) { width: 11rem; height: 7rem; }
+}
+
+// Landscape (website screenshots)
+.thumbLandscape {
+  @extend %thumb-base;
+  width: 20rem;
+
+  @media (min-width: 640px)  { width: 10rem; height: 5rem; }
+  @media (min-width: 1024px) { width: 7rem;  height: 3.5rem; }
+  @media (min-width: 1280px) { width: 11rem; height: 5rem; }
+}
+
+// ─── Project title link ────────────────────────────────────────────────────
+.titleBtn {
+  display: flex;
+  align-items: center;
+  color: #cbd5e1; // slate-300
+  margin-top: 0.5rem;
+  cursor: pointer;
+  text-align: left;
+  transition: color $duration-std;
+
+  &:hover { color: #2dd4bf; } // teal-400
+
+  @media (min-width: 1024px) {
+    &:hover { color: #cbd5e1; }
+  }
+}
+
+.subtitle {
+  color: #64748b; // slate-500
+}
+
+.category {
+  color: #94a3b8; // slate-400
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #64748b;
+  font-size: 0.875rem;
+  text-align: justify;
+  margin-bottom: 0.75rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
