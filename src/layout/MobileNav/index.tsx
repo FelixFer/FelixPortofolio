@@ -22,21 +22,19 @@ export default function MobileNav({ activeLink }: MobileNavProps) {
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-                    isActive
-                      ? 'bg-teal-500/10 text-teal-300 shadow-[inset_0_1px_1px_rgba(94,234,212,0.1)]'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  <Icon 
-                    size={18} 
-                    className={`shrink-0 transition-transform duration-300 ${isActive ? 'scale-110' : ''}`} 
-                  />
-                  
-                  <span
-                    className={`text-xs font-bold tracking-wide whitespace-nowrap overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-                      isActive ? 'max-w-[100px] opacity-100' : 'max-w-0 opacity-0'
+                  className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] [-webkit-tap-highlight-color:transparent] ${isActive
+                    ? 'bg-teal-500/10 text-teal-300 shadow-[inset_0_1px_1px_rgba(94,234,212,0.1)]'
+                    : 'text-slate-400 hover:text-slate-200'
                     }`}
+                >
+                  <Icon
+                    size={18}
+                    className={`shrink-0 transition-transform duration-300 ${isActive ? 'scale-110' : ''}`}
+                  />
+
+                  <span
+                    className={`text-xs font-bold tracking-wide whitespace-nowrap overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${isActive ? 'max-w-[100px] opacity-100' : 'max-w-0 opacity-0'
+                      }`}
                   >
                     {label}
                   </span>
