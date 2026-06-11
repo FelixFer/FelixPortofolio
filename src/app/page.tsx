@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { IPokemon } from '@/types/pokemon';
 import Sidebar from '@/layout/Sidebar';
 import Footer from '@/layout/Footer';
@@ -23,11 +22,13 @@ export default function Home() {
       try {
         const responses = await Promise.all(
           Array.from({ length: 151 }, (_, i) =>
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`, { signal: controller.signal })
+            fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}/`, { signal: controller.signal }).then(
+              (r) => r.json()
+            )
           )
         );
         setPokemon(
-          responses.map(({ data }) => ({
+          responses.map((data) => ({
             id: data.id,
             abilities: data.abilities,
             name: data.name,
@@ -37,7 +38,7 @@ export default function Home() {
           }))
         );
       } catch (err) {
-        if (!axios.isCancel(err)) console.error('Failed to fetch Pokémon:', err);
+        if ((err as Error).name !== 'AbortError') console.error('Failed to fetch Pokémon:', err);
       }
     };
     fetchPokemon();
