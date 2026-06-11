@@ -37,13 +37,22 @@ export const metadata: Metadata = {
     siteName: 'Felix Ferdinand Portfolio',
     title: 'Felix Ferdinand — Frontend Engineer',
     description:
-      'Portfolio of Felix Ferdinand, a Frontend Engineer with experience in Express.js, Node.js, PostgreSQL, and React Native.',
+      'Felix Ferdinand — Frontend Engineer specializing in React.js, TypeScript, and scalable web applications.',
+    images: [
+      {
+        url: `${baseUrl}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Felix Ferdinand — Frontend Engineer',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Felix Ferdinand — Frontend Engineer',
     description:
       'Felix Ferdinand — Frontend Engineer specializing in React.js, TypeScript, and scalable web applications.',
+    images: [`${baseUrl}/og.png`],
   },
   robots: {
     index: true,
@@ -53,7 +62,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
