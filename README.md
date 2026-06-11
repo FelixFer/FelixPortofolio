@@ -1,8 +1,11 @@
 # Felix Ferdinand — Portfolio
 
-Personal portfolio website for **Felix Ferdinand**, Frontend Engineer. Built with Next.js 13, TypeScript, Tailwind CSS, and SCSS Modules.
+Personal portfolio website for **Felix Ferdinand**, Frontend Engineer. Built with Next.js 15, TypeScript, Tailwind CSS, and SCSS Modules.
 
-Live at **[felixferdinand.vercel.app](https://felixferdinand.vercel.app)**
+[![Live](https://img.shields.io/badge/Live-felixferdinand.vercel.app-00b4d8?style=flat-square&logo=vercel)](https://felixferdinand.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.1-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
 
@@ -10,7 +13,7 @@ Live at **[felixferdinand.vercel.app](https://felixferdinand.vercel.app)**
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 13 (App Router) |
+| Framework | Next.js 15 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS + SCSS Modules |
 | HTTP Client | Axios |
@@ -18,6 +21,18 @@ Live at **[felixferdinand.vercel.app](https://felixferdinand.vercel.app)**
 | Font | Inter (Google Fonts via `next/font`) |
 | Deployment | Vercel |
 | Container | Docker (multi-stage build) |
+
+---
+
+## Features
+
+- **Responsive layout** — two-column desktop, single-column mobile with sticky section headers
+- **Smooth scroll navigation** — sidebar links highlight based on scroll position
+- **Project modals** — click any project thumbnail to open a full-screen image carousel
+- **SEO optimised** — full Open Graph, Twitter Card, JSON-LD structured data, sitemap, robots.txt
+- **Pokédex easter egg** — click the name in the sidebar to browse all 151 Gen 1 Pokémon (data from PokéAPI)
+- **SCSS Modules** — each feature owns scoped styles; global tokens shared via `_variables.scss`
+- **Docker ready** — multi-stage Dockerfile with non-root user and standalone Next.js output
 
 ---
 
@@ -33,38 +48,21 @@ src/
 │
 ├── components/             # Generic reusable UI primitives
 │   ├── Carousel/           # Image carousel with dot indicators
-│   │   ├── index.tsx
-│   │   └── Carousel.module.scss
 │   ├── Modal/              # Overlay modal with scale animation
-│   │   ├── index.tsx
-│   │   └── Modal.module.scss
 │   └── TechBadge/          # Pill badge for tech stack labels
-│       └── index.tsx
 │
 ├── features/               # Domain-specific feature modules
 │   ├── about/
-│   │   ├── Description.tsx
-│   │   └── about.module.scss
 │   ├── experience/
-│   │   ├── ExperienceSection.tsx
-│   │   ├── ExperienceCard.tsx
-│   │   └── experience.module.scss
 │   ├── projects/
-│   │   ├── ProjectsSection.tsx
-│   │   ├── ProjectCard.tsx
-│   │   └── projects.module.scss
 │   └── pokedex/            # Easter egg — Gen 1 Pokédex (PokéAPI)
-│       ├── Pokedex.tsx
-│       └── pokedex.module.scss
 │
 ├── layout/                 # Page-shell components
 │   ├── Sidebar/
-│   │   ├── index.tsx
-│   │   └── Sidebar.module.scss
 │   ├── Footer/
-│   │   └── index.tsx
+│   ├── MobileNav/
+│   ├── GoToTop/
 │   ├── SocialIcons/
-│   │   └── index.tsx
 │   └── JsonLd.tsx          # Schema.org Person structured data
 │
 ├── data/                   # Static content (no API calls)
@@ -72,7 +70,7 @@ src/
 │   └── projects.ts         # Project entries with images and metadata
 │
 ├── types/                  # TypeScript type definitions
-│   └── pokemon.ts          # IPokemon and related interfaces
+│   └── pokemon.ts
 │
 ├── utils/                  # Utility constants and helpers
 │   ├── social.ts           # Social link definitions with icons
@@ -83,18 +81,6 @@ src/
     ├── _variables.scss     # Design tokens ($color-teal, $duration-*)
     └── _base.scss          # Scrollbar, text selection (uses variables)
 ```
-
----
-
-## Features
-
-- **Responsive layout** — two-column desktop, single-column mobile with sticky section headers
-- **Smooth scroll navigation** — sidebar links highlight based on scroll position
-- **Project modals** — click any project thumbnail to open a full-screen image carousel
-- **SEO optimised** — full Open Graph, Twitter Card, JSON-LD structured data, sitemap, robots.txt
-- **Pokédex easter egg** — click the name in the sidebar to browse all 151 Gen 1 Pokémon (data from PokéAPI)
-- **SCSS Modules** — each feature owns scoped styles; global tokens shared via `_variables.scss`
-- **Docker ready** — multi-stage Dockerfile with non-root user and standalone Next.js output
 
 ---
 
@@ -165,4 +151,4 @@ Deployed automatically to **Vercel** on every push to `main`. No additional conf
 
 ## License
 
-Personal portfolio — not licensed for reuse.
+[MIT](LICENSE) — feel free to use this as a template for your own portfolio.
