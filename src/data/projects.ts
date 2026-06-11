@@ -24,6 +24,7 @@ import ocr5 from '../../public/img/ocr5.jpg';
 import ocr6 from '../../public/img/ocr6.jpg';
 import ocr7 from '../../public/img/ocr7.jpg';
 import ocr8 from '../../public/img/ocr8.jpg';
+import bookroomRoom from '../../public/img/room-day.png';
 
 export interface Project {
   title: string;
@@ -39,6 +40,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Bookroom',
+    category: 'Personal Project',
+    description:
+      'Your cozy personal library. Track what you read, what you love, and what\'s next.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Sass', 'PostgreSQL (via Neon)', 'Prisma', 'NextAuth'],
+    thumbnail: bookroomRoom,
+    thumbnailAlt: 'Bookroom Website',
+    href: 'https://mybookroom.vercel.app/',
+  },
   {
     title: 'Hangul Syllable Prediction',
     subtitle: '(Not Published)',

@@ -10,7 +10,7 @@ interface ProjectCardProps {
   onOpenModal?: () => void;
 }
 
-const LANDSCAPE_PROJECTS = ['SandwichYay', 'Djongers Weather'];
+const LANDSCAPE_PROJECTS = ['SandwichYay', 'Djongers Weather', 'Bookroom'];
 
 // Arrow that moves diagonally up-right on hover (Brittany Chiang style)
 function ArrowIcon() {
