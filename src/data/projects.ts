@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 import hangulClassification from '../../public/img/hangul-prediction.png';
 import djongWeather from '../../public/img/djong-weather.png';
 import seiyou from '../../public/img/seiyou.png';
-import quicRecipe from '../../public/img/quickrecipe.png';
+import quicRecipe from '../../public/img/quickrecipe1.png';
 import gebetApp from '../../public/img/gebetApp.png';
 import gebetApp1 from '../../public/img/gebetApp1.png';
 import gebetApp2 from '../../public/img/gebetApp2.png';
